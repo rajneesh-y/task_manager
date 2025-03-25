@@ -29,12 +29,14 @@ A Django-based backend application that provides a set of REST APIs for creating
 #### Clone the repository
 
 git clone https://github.com/rajneesh-y/task_manager.git
+
 cd task-manager
 
 #### Create virtual environment
 
 python -m venv env
-source env/bin/activate  # on Windows use `env\Scripts\activate`
+
+source env/bin/activate  #on Windows use -> `env\Scripts\activate`
 
 #### Install dependencies
 
@@ -43,6 +45,7 @@ pip install -r requirements.txt
 #### Apply migrations
 
 python manage.py makemigrations
+
 python manage.py migrate
 
 #### Create a superuser for admin access
