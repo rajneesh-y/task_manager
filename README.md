@@ -1,9 +1,6 @@
-
 ## **🛠️ Task Management API**
 
 A Django-based backend application that provides a set of REST APIs for creating tasks, assigning them to users, and retrieving tasks assigned to specific users.
-
-
 
 ## **📌 Features**
 
@@ -11,7 +8,6 @@ A Django-based backend application that provides a set of REST APIs for creating
 * Assign tasks to one or multiple users.
 * Retrieve all tasks assigned to a specific user.
 * Clean and scalable architecture following Django best practices.
-
 
 ## 🧰 Tech Stack
 
@@ -32,7 +28,7 @@ A Django-based backend application that provides a set of REST APIs for creating
 
 #### Clone the repository
 
-git clone `<your-repo-url>`
+git clone https://github.com/rajneesh-y/task_manager.git
 cd task-manager
 
 #### Create virtual environment
@@ -59,7 +55,7 @@ password:admin (or open to choose your password)
 
 #### Run the development server
 
-python manage.py runserver 
+python manage.py runserver
 
 ## 🧪 Sample Test User Credentials
 
@@ -118,7 +114,6 @@ You can log in via Django Admin panel:
 "message":"Task assigned to users successfully."
 
 }
-
 
 ### 3. **Get Tasks for a User**
 
