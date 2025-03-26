@@ -11,10 +11,6 @@ class TaskViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['get'], url_path='user/(?P<user_id>[^/.]+)')
     def tasks_by_user(self, request, user_id=None):
-
-        #To return Only
-        # tasks = Task.objects.filter(assigned_users__id=user_id).values('name', 'description')
-        # return Response(tasks)
         
         tasks = Task.objects.filter(assigned_users__id=user_id)
         serializer = self.get_serializer(tasks, many=True)
@@ -35,18 +31,4 @@ class TaskViewSet(viewsets.ModelViewSet):
 
         task.assigned_users.add(user)  # ManyToMany
         task.save()
-        # return Response(self.get_serializer(task).data)
         return Response({"message": "Task assigned to users successfully."}, status=status.HTTP_200_OK)
-
-    # def create(self, request, *args, **kwargs):
-    #     user_ids = request.data.pop("assigned_users", [])
-    #     serializer = self.get_serializer(data=request.data)
-    #     serializer.is_valid(raise_exception=True)
-    #     task = serializer.save()
-
-    #     if user_ids:
-    #         users = User.objects.filter(id__in=user_ids)
-    #         task.assigned_users.set(users)
-
-    #     task.save()
-    #     return Response(self.get_serializer(task).data, status=status.HTTP_201_CREATED)

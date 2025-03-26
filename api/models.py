@@ -6,14 +6,7 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     mobile = models.CharField(max_length=15, blank=True)
-    email = models.EmailField(unique=True)
-
-    # def save(self, *args, **kwargs):
-    #     # If the user is being created, don't assign any tasks by default
-    #     if self.pk is None:  # This checks if the user is new
-    #         self.tasks.clear()  # Clear any existing task assignments
-    #     super(User, self).save(*args, **kwargs)
-    
+    email = models.EmailField(unique=True)    
 
 
 class Task(models.Model):
